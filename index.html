@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8" />
+    <title>Hello World!</title>
+    <!-- https://electronjs.org/docs/tutorial/security#csp-meta-tag -->
+    <meta
+      http-equiv="Content-Security-Policy"
+      content="script-src 'self' 'unsafe-inline';"
+    />
+    <style>
+      body {
+        background-color: white;
+      }
+    </style>
+  </head>
+  <body>
+    <h1>Hello World!</h1>
+
+    <input type="button" id="syncBtn" value="Hello Sync" />
+    <input type="button" id="asyncBtn" value="Hello aSync" />
+    <input type="button" id="folderPath" value="chemin du dossier" />
+    <div id="reply"></div>
+
+    <script>
+      require("./renderer.js");
+    </script>
+  </body>
+</html>
