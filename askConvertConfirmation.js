@@ -25,6 +25,7 @@ function convertAllImages(settings) {
     files.forEach((file) => {
       const stats = fs.statSync(`${settings.inputImagesFolder}/${file}`);
       if (stats.isDirectory()) return;
+      if (file === 'desktop.ini') return;
 
       const inputImage = `${settings.inputImagesFolder}/${file}`;
 
