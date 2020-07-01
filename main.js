@@ -68,5 +68,7 @@ ipc.on("getFolder", (event, args) => {
 });
 
 ipc.on("resize", (event, args) => {
+  if (!args.inputImagesFolder) return;
+
   resize(args);
 });

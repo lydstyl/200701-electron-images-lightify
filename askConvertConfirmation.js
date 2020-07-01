@@ -85,6 +85,7 @@ function getFilesizeInBytes(filename) {
 }
 
 function openFolder(path) {
+  // to fix path --> 'C:\Users\Gabriel\Pictures/Saved Pictures'
   openExplorer(path, (err) => {
     if (err) {
       console.log(err);
