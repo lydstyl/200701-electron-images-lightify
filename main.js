@@ -1,5 +1,7 @@
 const { app, BrowserWindow, dialog, ipcMain } = require("electron");
 
+const { resize } = require("./askConvertConfirmation.js");
+
 function createWindow() {
   // Create the browser window.
   const win = new BrowserWindow({
@@ -63,4 +65,10 @@ ipc.on("getFolder", (event, args) => {
       event.sender.send("asynReply", res.filePaths[0]);
     }
   });
+});
+
+ipc.on("resize", (event, args) => {
+  console.log(args, "xxxxxxxxx resize");
+
+  // resizeImages(settings)
 });
