@@ -1,5 +1,7 @@
 const { app, BrowserWindow, dialog, ipcMain } = require("electron");
 
+
+
 const { resize } = require("./askConvertConfirmation.js");
 
 function createWindow() {
@@ -12,6 +14,8 @@ function createWindow() {
       nodeIntegration: true,
     },
   });
+
+  win.setMenu(null);
 
   // and load the index.html of the app.
   win.loadFile("index.html");

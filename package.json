@@ -1,5 +1,7 @@
 {
-  "name": "200701-electron",
+  "name": "images-lightify",
+  "author": "Gabriel Brun",
+  "description": "Resize all pictures in a specific folder",
   "version": "0.1.0",
   "main": "main.js",
   "scripts": {
