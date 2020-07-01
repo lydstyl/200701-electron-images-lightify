@@ -35,6 +35,4 @@ document.querySelector('[type="submit"]').addEventListener("click", (evt) => {
   settings.greyscale = settings.greyscale === "true" ? true : false;
 
   ipc.send("resize", settings);
-
-  alert("Travail terminé");
 });

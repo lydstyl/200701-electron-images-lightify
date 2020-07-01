@@ -2,11 +2,14 @@ const fs = require("fs");
 const mkdirp = require("mkdirp");
 const sharp = require("sharp");
 const sizeOf = require("image-size");
+const openExplorer = require("open-file-explorer");
 
 exports.resize = (settings) => {
   makeOutputImagesFolder(settings);
 
   convertAllImages(settings);
+
+  openFolder(settings.outputImagesFolder);
 };
 
 function makeOutputImagesFolder(settings) {
@@ -78,4 +81,14 @@ function getFilesizeInBytes(filename) {
   var stats = fs.statSync(filename);
   var fileSizeInBytes = stats["size"];
   return fileSizeInBytes;
+}
+
+function openFolder(path) {
+  openExplorer(path, (err) => {
+    if (err) {
+      console.log(err);
+    } else {
+      //Do Something
+    }
+  });
 }
