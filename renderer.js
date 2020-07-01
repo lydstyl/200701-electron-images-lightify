@@ -32,8 +32,7 @@ document.querySelector('[type="submit"]').addEventListener("click", (evt) => {
   // finish settings so it match the script
   settings.width = parseInt(settings.width, 10);
   settings.outputExts = ["jpg", "webp"];
-
-  console.log("settings", settings);
+  settings.greyscale = settings.greyscale === "true" ? true : false;
 
   ipc.send("resize", settings);
 
