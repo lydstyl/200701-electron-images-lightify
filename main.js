@@ -6,8 +6,8 @@ function createWindow() {
   // Create the browser window.
   const win = new BrowserWindow({
     width: 620,
-    // height: 500,
-    height: 1350,
+    height: 500,
+    // height: 1350,
     webPreferences: {
       nodeIntegration: true,
     },
@@ -17,7 +17,7 @@ function createWindow() {
   win.loadFile("index.html");
 
   // Open the DevTools.
-  win.webContents.openDevTools();
+  // win.webContents.openDevTools();
 }
 
 // This method will be called when Electron has finished
@@ -68,7 +68,5 @@ ipc.on("getFolder", (event, args) => {
 });
 
 ipc.on("resize", (event, args) => {
-  console.log(args, "xxxxxxxxx resize");
-
-  // resizeImages(settings)
+  resize(args);
 });
