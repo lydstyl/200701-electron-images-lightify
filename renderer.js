@@ -1,22 +1,33 @@
 const ipc = require("electron").ipcRenderer,
-  syncBtn = document.querySelector("#syncBtn"),
-  asyncBtn = document.querySelector("#asyncBtn"),
-  folderBtn = document.querySelector("#folderPath");
+  folderBtn = document.querySelector("#folderPath"),
+  replyDiv = document.querySelector('[name="inputImagesFolder"]');
 
-let replyDiv = document.querySelector("#reply");
-
-syncBtn.addEventListener("click", () => {
-  let reply = ipc.sendSync("synMessage", "A sync message to main");
-  replyDiv.innerHTML = reply;
-});
-
-asyncBtn.addEventListener("click", () => {
-  ipc.send("aSynMessage", "A async message to main");
-});
 folderBtn.addEventListener("click", () => {
   ipc.send("getFolder", "Message getFolder");
 });
 
 ipc.on("asynReply", (event, args) => {
-  replyDiv.innerHTML = args;
+  replyDiv.value = args;
+});
+
+document.querySelector('[type="submit"]').addEventListener("click", (evt) => {
+  // ipc.send("getFolder", "Message getFolder");
+  evt.preventDefault();
+
+  const options = {};
+
+  document.querySelectorAll("input,select").forEach((el) => {
+    if (el.name) {
+      if (el.name === "width2" && el.value) {
+        options["width"] = el.value;
+      } else {
+        options[el.name] = el.value;
+      }
+    }
+  });
+
+  if (options.width2) {
+  }
+
+  console.log("options", options);
 });

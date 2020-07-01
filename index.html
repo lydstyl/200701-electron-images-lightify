@@ -2,25 +2,75 @@
 <html>
   <head>
     <meta charset="UTF-8" />
-    <title>Hello World!</title>
+    <title>Images Lightify</title>
     <!-- https://electronjs.org/docs/tutorial/security#csp-meta-tag -->
     <meta
       http-equiv="Content-Security-Policy"
       content="script-src 'self' 'unsafe-inline';"
     />
-    <style>
-      body {
-        background-color: white;
-      }
-    </style>
+
+    <link rel="stylesheet" href="style.css" />
   </head>
   <body>
-    <h1>Hello World!</h1>
+    <div class="container">
+      <h1>Images Lightify</h>
+  
+      <br />
+  
+      <form>
+        
+        <div class="field">
+          <label for="inputImagesFolder">Dossier</label
+          >
+          <input type="button" id="folderPath" value="choisir" />
+          <input
+            type="text"
+            name="inputImagesFolder"
+            id="inputImagesFolder"
+            placeholder="/mon/dossier/images"
+          />
+        </div>
+  
+        <div class="field">
+          <label for="width">Largeur en px</label
+          ><select name="width" id="width" style="margin-right: 20px;"
+            ><option value="720">720</option
+            ><option value="768">768</option
+            ><option value="1080">1080</option
+            ><option value="1200">1200</option
+            ><option value="1280">1280 HD</option
+            ><option value="1366">1366 </option
+            ><option value="1440">1440</option
+            ><option value="1600">1600 Whatsapp</option
+            ><option value="1920">1920 full HD</option
+            ><option value="2160">2160</option
+            ><option value="2560">2560 2K</option
+            ><option value="3840">3840 4K</option></select
+          ><label for="width2">Ou préciser</label
+          ><input type="number" name="width2" id="width2" style="width: 100px;" />
+        </div>
+        <div class="field">
+          <label for="greyscale">Noir et blanc</label
+          ><select name="greyscale" id="greyscale"
+            ><option value="false">Non</option
+            ><option value="true">Oui</option></select
+          >
+        </div>
+        <div class="field">
+          <label for="outputExt">Format</label
+          ><select name="outputExt" id="outputExt"
+            ><option value="jpg">JPG</option
+            ><option value="png">PNG</option
+            ><option value="webp">WEBP</option></select
+          >
+        </div>
+        <input type="submit" value="Redimensionner les images" />
+      </form>
+  
+    </div>
 
-    <input type="button" id="syncBtn" value="Hello Sync" />
-    <input type="button" id="asyncBtn" value="Hello aSync" />
-    <input type="button" id="folderPath" value="chemin du dossier" />
-    <div id="reply"></div>
+    <!-- <input type="button" id="syncBtn" value="Hello Sync" />
+    <input type="button" id="asyncBtn" value="Hello aSync" /> -->
 
     <script>
       require("./renderer.js");

@@ -3,8 +3,9 @@ const { app, BrowserWindow, dialog, ipcMain } = require("electron");
 function createWindow() {
   // Create the browser window.
   const win = new BrowserWindow({
-    width: 800,
-    height: 600,
+    width: 620,
+    // height: 500,
+    height: 1350,
     webPreferences: {
       nodeIntegration: true,
     },
@@ -57,7 +58,6 @@ ipc.on("getFolder", (event, args) => {
   console.log(args);
 
   dialog.showOpenDialog({ properties: ["openDirectory"] }).then((res) => {
-    console.log("yé");
     console.log(res);
     if (!res.canceled) {
       event.sender.send("asynReply", res.filePaths[0]);
