@@ -14,12 +14,7 @@ function makeOutputImagesFolder(settings) {
     settings.outputExt
   }_${settings.width}${settings.greyscale ? "_greyscale" : ""}`;
 
-  mkdirp(settings.outputImagesFolder, function (err) {
-    // path exists unless there was an error
-    if (err) {
-      console.log(err);
-    }
-  });
+  mkdirp.sync(settings.outputImagesFolder);
 }
 
 function convertAllImages(settings) {
