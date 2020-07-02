@@ -10,7 +10,7 @@
 
 ## For Linux and Mac
 
-You will neead to install node if you don't have it.
+You will need to install node if you don't have it.
 
 1. clone this repo
 2. npm i
