@@ -12,6 +12,9 @@
 
 You will need to install node if you don't have it.
 
-1. clone this repo
+1. install git if you don't have it
+2. install node if you don't have it
+3. clone this repo
+3. cd in the cloned folder 
 2. npm i
 3. npm start
