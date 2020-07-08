@@ -3,7 +3,7 @@
 ![images-lightify screenshot](./Capture.PNG "images-lightify screenshot")
 
 ## For Windows 
-1. Download the file images-lightify-win32-x64.zip
+1. Download the file [images-lightify-win32-x64.zip](https://www.dropbox.com/sh/mcqcdu0d9w69kxd/AAAIjUxHWDlVjnKj2aXj19Saa?dl=0)
 2. unzip it
 3. launch images-lightify.exe in the unziped folder
 
